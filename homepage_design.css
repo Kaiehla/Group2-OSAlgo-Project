@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+body{
+    background-color: #DEDBD2;
+}
+
+.border{
+    background-color: #4A5759 !important;
+}
+
+/* .btn-primary{
+    background-color: #EDAFB8 !important;
+    border-color: #4A5759;
+    border: 1px solid rgba(0, 0, 0, .10);
+} */
+
+th, td{
+    border: 1px solid rgb(74, 87, 89) !important;
+}
+
+
+*{
+   font-family: 'Poppins', sans-serif;
+   color: #4A5759;
+}
+
+.navbar-reset-button{
+    text-decoration: none; 
+    color: #5c3574;
+}
+
+.navbar-reset-button:hover{
+    color: rgb(216, 141, 216);
+}
+
+.navbar-design{
+    background: rgb(249,223,255);
+    background: linear-gradient(90deg, rgba(249,223,255,1) 0%, rgba(239,180,255,1) 54%, rgba(213,159,255,1) 71%, rgba(206,126,255,1) 93%);
+    color:#5c3574;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+.page-footer {
+    position: relative;
+    margin-top: 2.5vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 12.9vh;
+  }
+
+  .footer-copyright {
+    background-color: #c0bdb5;
+    flex: 1; /* This will make the .footer-copyright expand to fill the remaining space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+.btn, .button {
+    color: #4A5759;
+    background-color: #EDAFB8 !important;
+    border-color: #4A5759;
+    border: 1px solid rgba(0, 0, 0, .10);
+    margin: 0; /* Reset margin to zero */
+  } /*ang cute ahahahah*/
+
+      
+  /*For SCAN HTML*/
+  .form-select{
+    height: 38px;
+    border: 1px solid rgba(0, 0, 0, 50)!important;
+  }
+
+  a:hover{
+    text-decoration: none;
+  }
+
+.form-control{
+    background-color: #E9ECEF !important;
+}
+/* Color Palette */
+.dark-green {
+    color: #4A5759;
+}
+
+.matcha {
+    color: #b0c4b1;
+}
+
+.pale-green {
+    color: #DEDBD2;
+}
+
+.pale-beige {
+    color: #f7e1d7
+}
+
+.pink {
+    color: #EDAFB8
+}

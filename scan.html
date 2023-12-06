@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta name="author" content="Pranav Sirodaria">
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+      <title>Group 2 OS AltAssess</title>
+      <link rel="icon" type="image/x-icon" href="img/adjustments.svg">
+
+      <!-- BOOTSTRAP -->
+      <script
+         src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+         crossorigin="anonymous"></script>
+
+      <link rel="stylesheet"
+         href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+         crossorigin="anonymous">
+
+      <!-- JAVASCRIPT LINKS -->
+      <script type="text/javascript" src="scan.js"></script>
+      <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+      <script type="text/javascript" src="renderchart.js"></script>
+
+      <!--CSS-->
+      <link href="homepage_design.css" rel="stylesheet">
+      <!-- JAVASCRIPT LINKS -->
+      <!-- <link href="CSS/styles.css?" rel="stylesheet" type="text/css"> 
+<link href="CSS/index.css?" rel="stylesheet" type="text/css">
+<link href="CSS/simulator.css?" rel="stylesheet" type="text/css">   -->
+   </head>
+
+   <body>
+      <!-- NAVBAR -->
+      <header>
+         <nav class="navbar navbar-light bg-transparent">
+            <span class="navbar-text">
+               <a href="index.html" class="mx-2">CPU Scheduling</a>
+               <a href="scan.html" class="mx-2 font-weight-bold">Disk Scheduling</a>
+            </span>
+            <span class="navbar-brand text-center align-self-center font-weight-bold">
+               Group 2 - Alternative Assessment
+            </span>
+            <span class="navbar-text">
+               <a href class="mx-4 navbar-reset-button">Reset</a>
+            </span>
+         </nav>
+      </header>
+
+      <div class="container mt-5">
+         <section class="row">
+
+            <!-- INPUT -->
+            <div class="col-3 p-0 mb-2">
+               <div class="form card shadow p-3"
+                  style="background-color: #B0C4B1; border-radius: 10px; background-color: #B0C4B1;">
+                  <form onsubmit="return false;" ID="drop">
+
+                     <label class="font-weight-bold">Current Track Position</label>
+                     <input type="text" class="form-control current-track"
+                        id="css" placeholder="50">
+
+                     <label class="font-weight-bold mt-3">Direction</label>
+                     <select class="form-control direction-dropdown"
+                        aria-label="Default select example" id="dir">
+                        <option selected>Select the direction</option>
+                        <option value="left">Left</option>
+                        <option value="right">Right</option>
+                     </select>
+
+                     <!--Tracking-->
+                     <label class="font-weight-bold mt-3">Track Number</label>
+                     <input type="text" class="form-control track-sequence"
+                        id="css" placeholder="90 76 234 102 45">
+
+                     <button class="btn mt-4 font-weight-bold col-12 mb-2" value="Simulate"
+                        id="addbtn">Simulate</button>
+                  </form>
+               </div>
+
+            </div>
+
+            <!-- OUTPUT -->
+            <div class="col-8">
+               <div class="results ml-3">
+                  <h3 class="font-weight-bolder mb-3">Output:</h3>
+                  <table class="table table-bordered"
+                     style="border: 1px solid black;">
+                     <thead>
+                        <th>Current Track Position</th>
+                        <th>Track Numbers Entered</th>
+                        <th>Order of Execution</th>
+                        <th>Total Seek Time</th>
+                     </thead>
+
+                     <tbody>
+                        <tr>
+                           <td class="current"></td>
+                           <td class="track-number"></td>
+                           <td class="order"></td>
+                           <td class="time"></td>
+                        </tr>
+                     </tbody>
+                  </table>
+
+                  <h5 class="mt-4">Graph:</h5>
+                  <div id="chartContainer"
+                     style="width: auto; height: 200px; margin-top: 10px; margin-bottom: 95px;">
+                  </div>
+               </div>
+            </div>
+
+            <div>
+               <script>      
+                  function disableDropdown(){
+                     if(drop.algo.options[4].selected || drop.algo.options[5].selected){
+                        drop.dir.disabled = true;
+                     }
+                     else{
+                        drop.dir.disabled = false;
+                     }
+                  }  
+
+                  function gettrackno(){
+                     var trackno = document.querySelector('.track-sequence').value;
+                     var ctrack = document.querySelector('.current-track').value;
+
+                     document.querySelector(".track-number").innerHTML = trackno;
+                     document.querySelector(".current").innerHTML = ctrack;
+                  //   if(alg === "SCAN"){
+                        scan();
+                     // return false;
+                     // }
+                    }
+
+                  var subButton = document.getElementById('addbtn');
+                  subButton.addEventListener('submit', gettrackno, false); 
+               
+               </script>
+            </div>
+
+         </section>
+
+      </div>
+
+      <footer class="page-footer bg-light mt-5">
+
+         <div class="footer-copyright text-center py-3">
+            <span>
+               Copyright &copy; Group 2 - 3ITD | Espiritu, Foronda, Laroza,
+               Legaspino, San Jose
+            </span>
+         </div>
+
+      </footer>
+
+   </body>
+</html>
